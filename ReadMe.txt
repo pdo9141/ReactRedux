@@ -8,3 +8,21 @@
 08) For performance add Reselect: "yarn add reselect"
 09) Consider Store > Component > Sub-component pattern (Smart vs dumb components). Keeps things cleaner with fewer components connected to store
     State flows down to dumb components. E.g., Store > productsPage > addProduct or productsList (dumb)
+
+Shmarticle
+01) Create bare bones API project: "rails new shmarticle-api --api"    
+02) Update Gemfile: "gem 'rack-cors'" and "gem 'active_model_serializers', '~> 0.10.0'"
+03) To support JSON ad active_model_serializer.rb in config/initializers
+04) Tweak CORS settings in config/initializers/cors.rb
+05) Create model for migration: "rails g model Article title:string"
+06) Run migration: "rake db:migrate"
+07) Modify routes for API in config/routes.rb
+08) Modify folder structure controllers/api/v1
+09) Add serializer class in app/serializers, kind of like DTO
+10) Check out https://www.youtube.com/user/thenewboston for React-Redux-Boilerplate
+    "git clone https://github.com/buckyroberts/React-Redux-Boilerplate.git shmarticle-front"
+    Modify package.json, remove react-dom and react, use older versions
+    Add react 0.14.3, react-dom 0.14.3, redux-form 4.1.3 axios 0.12.0
+    Update node-sass version, I used ^4.6.0
+    Run "npm install"
+11) Start up API in port 5000: "rails server -p 5000"    
