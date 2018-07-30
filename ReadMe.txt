@@ -26,3 +26,15 @@ Shmarticle
     Update node-sass version, I used ^4.6.0
     Run "npm install"
 11) Start up API in port 5000: "rails server -p 5000"    
+12) Go to https://github.com/MSOpenTech/redis/releases (Redis-x64-3.2.100.zip)
+13) Add Redis install folder to PATH environment variable
+14) Use commands: "redis-server", "redis-cli", "SHUTDOWN SAVE", ctrl + c, "exit"
+15) Add Redis gems and type "bundle" to install
+    gem 'redis'
+    gem 'redis-namespace'
+    gem 'redis-rails'
+    gem 'redis-rack-cache'
+16) Add redis.rb in config/initializers
+    $redis = Redis::Namespace.new("", :redis => Redis.new, :timeout => 5.0)
+17) Redis CLI: "get [key]", "set [key] [value]", "del [key]", "KEYS *"   
+    Keys stored in Redis from Rails client is appended with colon, eg., ":properties"
